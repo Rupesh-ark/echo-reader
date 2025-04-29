@@ -1,22 +1,43 @@
-# This file is for zig-specific build artifacts.
-# If you have OS-specific or editor-specific files to ignore,
-# such as *.swp or .DS_Store, put those in your global
-# ~/.gitignore and put this in your ~/.gitconfig:
-#
-# [core]
-#     excludesfile = ~/.gitignore
-#
-# Cheers!
-# -andrewrk
-
+# ==== Zig build artifacts ====
 .zig-cache/
-zig-out/
-/release/
-/debug/
-/build/
-/build-*/
-/docgen_tmp/
+.zig-out/
+.build/               # if you’ve named your output dir “build”
+.out/                 # alternate build dir names
 
-# Although this was renamed to .zig-cache, let's leave it here for a few
-# releases to make it less annoying to work with multiple branches.
-zig-cache/
+# Object files / binaries
+*.o
+*.obj
+*.exe
+*.dll
+*.lib
+*.so
+*.dylib
+*.a
+
+# ==== Node / Vite (front-end) ====
+static/node_modules/
+dist/                # Vite’s default output dir
+build/               # if you configure Vite to emit to “build”
+*.vite*              # temporary Vite cache files
+
+# Environment files (secrets)
+.env
+.env.*.local
+
+# npm/Yarn/PnP logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp.*
+
+# ==== OS metadata ====
+.DS_Store
+Thumbs.db
+
+# ==== IDE / Editor configs ====
+.vscode/
+.idea/
+*.iml
+
+# ==== Misc ====
+*.log                # general log files
